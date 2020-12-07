@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'hw21_home_page/css/base/css' %}">
+
+    <title>
+        {% block title %}
+        Home Page
+        {% endblock %}
+
+    </title>
+</head>
+<body>
+{% block content %}
+Home page
+    {% for person in person %}
+       <p> {{ person.first_name }} {{ person.last_name }} </p>
+    {% endfor %}
+    <p><a href="{% url 'add_person' %}">Add person</a></p>
+{% endblock %}
+
+</body>
+</html>
