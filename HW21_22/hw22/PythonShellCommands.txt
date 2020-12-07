@@ -1,0 +1,10 @@
+1.python manage.py shell
+from hw22.models import MusicBand, Album, Track
+
+#database fields are created via the admin page
+MusicBand.objects.get(id=1).albums.all()
+Album.objects.get(id=1).songs.all()
+Album.objects.filter(band__creation_year__gte=1999)
+
+
+

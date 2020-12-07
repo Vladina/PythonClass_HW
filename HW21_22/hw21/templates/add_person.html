@@ -1,0 +1,9 @@
+{% extends 'hw21_home_page.html' %}
+{% block title %} Person page {% endblock %}
+{% block content %}
+    <form action="{% url 'add_person' %}" method="post">
+    {% csrf_token %}
+    {{ person_form.as_p }}
+    <button type="submit">Add person</button>
+        </form>
+{% endblock %}
